@@ -460,7 +460,9 @@ export default {
     // We close the swal if it is open (in case of pressing back just before the analysis start)
     try {
       swal.close();
-    } catch (error) {}
+    } catch (e) {
+      console.log("Swal not open");
+    }
   },
 };
 </script>
