@@ -1,10 +1,10 @@
-from config.init_config import get_config
-import modules.dataProviders.dataProviderManager as data_provider_manager
-from modules.dataProviders.DataProviderException import DataProviderException
+from backend.config.init_config import get_config
+import backend.modules.dataProviders.dataProviderManager as data_provider_manager
+from backend.modules.dataProviders.DataProviderException import DataProviderException
 import time
 
-from modules.exportMethods.methods.kafkaUtils import KafkaExportType
-from modules.exportMethods.methods.postUtils import PostExportType
+from backend.modules.exportMethods.methods.kafkaUtils import KafkaExportType
+from backend.modules.exportMethods.methods.postUtils import PostExportType
 
 #############################################################################
 #

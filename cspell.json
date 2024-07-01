@@ -54,7 +54,10 @@
     "Valeo",
     "vuejs",
     "Vuex",
-    "websrv"
+    "websrv",
+    "werkzeug",
+    "sdist",
+    "bdist"
   ],
   "flagWords": [],
   "ignorePaths": [
@@ -68,6 +71,7 @@
     "__pycache__/",
     "frontend/dist",
     "frontend/node_modules",
+    "./setup.py",
     "TODO"
   ]
 }

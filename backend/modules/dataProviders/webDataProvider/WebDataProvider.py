@@ -1,22 +1,22 @@
-from modules.dataProviders.DataProvider import DataProvider
-from modules.dataProviders.webDataProvider.useCases.data import (
+from backend.modules.dataProviders.DataProvider import DataProvider
+from backend.modules.dataProviders.webDataProvider.useCases.data import (
     get_project_id_list,
     get_project_samples,
 )
-from modules.dataProviders.webDataProvider.useCases.projects import (
+from backend.modules.dataProviders.webDataProvider.useCases.projects import (
     get_all_projects_from_data_provider,
     get_single_project_from_data_provider,
     delete_project,
 )
-from modules.dataProviders.webDataProvider.useCases.models import (
+from backend.modules.dataProviders.webDataProvider.useCases.models import (
     get_model_results,
     get_models_info,
     get_model_result_id,
     delete_model,
 )
-import modules.dataProviders.webDataProvider.useCases.selections as useCaseSelections
-from modules.dataProviders.webDataProvider.http.api import get_info, get_status
-from modules.dataProviders.webDataProvider.cache.cache import Cache
+import backend.modules.dataProviders.webDataProvider.useCases.selections as useCaseSelections  # noqa
+from backend.modules.dataProviders.webDataProvider.http.api import get_info, get_status
+from backend.modules.dataProviders.webDataProvider.cache.cache import Cache
 
 
 # WebDataProvider class, allow to get data from a web data-provider

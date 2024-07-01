@@ -1,5 +1,8 @@
 import os
-from modules.dataProviders.pythonDataProvider.dataUtils import pythonModuleUtils, hash
+from backend.modules.dataProviders.pythonDataProvider.dataUtils import (
+    pythonModuleUtils,
+    hash,
+)
 
 DATA_PATH = pythonModuleUtils.DATA_PATH
 

@@ -3,7 +3,7 @@ from termcolor import colored
 
 import os
 
-config_path = "config/config.ini"
+config_path = "backend/config/config.ini"
 config_parser = ConfigParser()
 
 DEBUG_COLOR = "light_blue"

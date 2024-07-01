@@ -1,5 +1,5 @@
-from config.init_config import get_config
-import modules.exportMethods.exportUtils as exportUtils
+from backend.config.init_config import get_config
+import backend.modules.exportMethods.exportUtils as exportUtils
 
 #############################################################################
 # Export API Management

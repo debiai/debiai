@@ -1,11 +1,13 @@
 #############################################################################
 # Imports
 #############################################################################
-from config.init_config import get_config
-from modules.dataProviders.webDataProvider.WebDataProvider import WebDataProvider
-from utils.utils import is_url_valid
-import modules.dataProviders.dataProviderManager as data_provider_manager
-from modules.dataProviders.DataProviderException import DataProviderException
+from backend.config.init_config import get_config
+from backend.modules.dataProviders.webDataProvider.WebDataProvider import (
+    WebDataProvider,
+)
+from backend.utils.utils import is_url_valid
+import backend.modules.dataProviders.dataProviderManager as data_provider_manager
+from backend.modules.dataProviders.DataProviderException import DataProviderException
 
 #############################################################################
 # Data Providers Management

@@ -3,7 +3,7 @@
 # It will mainly save the id list of samples, selections and models results
 # The ability to cache and the time to live are configurable in the config file
 
-from config.init_config import get_config
+from backend.config.init_config import get_config
 from cacheout import Cache as CacheoutCache
 
 

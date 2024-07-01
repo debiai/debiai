@@ -1,7 +1,7 @@
 #############################################################################
 # Imports
 #############################################################################
-import utils.layouts.layouts as layoutsUtils
+import backend.utils.layouts.layouts as layoutsUtils
 
 #############################################################################
 # Analysis dashboard layout Management

@@ -442,7 +442,7 @@ export default {
       // A redraw btn will be displayed, pressing it will send redraw
       // that can watched and used to redraw a plot (see created())
     },
-    redrawRequired() {
+    redrawRequired: function () {
       // The colored column has changed
       // We cat tell the parent widget that an update is required
       this.$parent.colorWarning = true;

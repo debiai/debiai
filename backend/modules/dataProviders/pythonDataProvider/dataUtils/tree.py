@@ -1,7 +1,7 @@
 import ujson as json
 import os
 
-from modules.dataProviders.pythonDataProvider.dataUtils import (
+from backend.modules.dataProviders.pythonDataProvider.dataUtils import (
     pythonModuleUtils,
     projects,
     models,

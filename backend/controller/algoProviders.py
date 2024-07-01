@@ -1,11 +1,11 @@
 #############################################################################
 # Imports
 #############################################################################
-from config.init_config import get_config
-from utils.utils import is_url_valid, is_valid_name
-import modules.algoProviders.algoProvidersManager as algo_provider_manager
-from modules.algoProviders.AlgoProviderException import AlgoProviderException
-from modules.algoProviders.AlgoProvider import AlgoProvider
+from backend.config.init_config import get_config
+from backend.utils.utils import is_url_valid, is_valid_name
+import backend.modules.algoProviders.algoProvidersManager as algo_provider_manager
+from backend.modules.algoProviders.AlgoProviderException import AlgoProviderException
+from backend.modules.algoProviders.AlgoProvider import AlgoProvider
 
 #############################################################################
 # Algo providers Management

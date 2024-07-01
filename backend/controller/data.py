@@ -1,8 +1,8 @@
 #############################################################################
 # Imports
 #############################################################################
-import modules.dataProviders.dataProviderManager as data_provider_manager
-from modules.dataProviders.DataProviderException import DataProviderException
+import backend.modules.dataProviders.dataProviderManager as data_provider_manager
+from backend.modules.dataProviders.DataProviderException import DataProviderException
 
 #############################################################################
 # Data Management

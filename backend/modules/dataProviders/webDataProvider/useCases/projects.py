@@ -1,7 +1,9 @@
-import modules.dataProviders.webDataProvider.http.api as api
+import backend.modules.dataProviders.webDataProvider.http.api as api
 
-from modules.dataProviders.webDataProvider.useCases.models import get_models_info
-from modules.dataProviders.webDataProvider.useCases.selections import (
+from backend.modules.dataProviders.webDataProvider.useCases.models import (
+    get_models_info,
+)
+from backend.modules.dataProviders.webDataProvider.useCases.selections import (
     get_project_selections,
 )
 

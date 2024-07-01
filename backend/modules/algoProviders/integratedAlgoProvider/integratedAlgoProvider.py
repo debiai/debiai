@@ -1,9 +1,9 @@
 import os
 from termcolor import colored
 
-from config.init_config import DEBUG_COLOR
-from modules.algoProviders.AlgoProvider import AlgoProvider
-from modules.algoProviders.AlgoProviderException import AlgoProviderException
+from backend.config.init_config import DEBUG_COLOR
+from backend.modules.algoProviders.AlgoProvider import AlgoProvider
+from backend.modules.algoProviders.AlgoProviderException import AlgoProviderException
 
 
 def _get_algorithm_python(algorithm_name):
@@ -29,7 +29,8 @@ def _get_algorithm_python(algorithm_name):
 
     # Import the algorithm
     algorithm_python = __import__(
-        "modules.algoProviders.integratedAlgoProvider.algorithms." + algorithm_file,
+        "backend.modules.algoProviders.integratedAlgoProvider.algorithms."
+        + algorithm_file,
         fromlist=["*"],
     )
 

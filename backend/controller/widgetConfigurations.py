@@ -1,7 +1,7 @@
 #############################################################################
 # Imports
 #############################################################################
-import utils.widgetConfigurations.widgetConfigurations as widgetConfUtils
+import backend.utils.widgetConfigurations.widgetConfigurations as widgetConfUtils
 
 #############################################################################
 # Widget configuration Management

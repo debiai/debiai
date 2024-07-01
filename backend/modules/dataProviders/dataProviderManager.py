@@ -1,12 +1,19 @@
 from termcolor import colored
 
-from config.init_config import get_config, DEBUG_COLOR, ERROR_COLOR, SUCCESS_COLOR
-from modules.dataProviders.webDataProvider.WebDataProvider import WebDataProvider
-from modules.dataProviders.pythonDataProvider.PythonDataProvider import (
+from backend.config.init_config import (
+    get_config,
+    DEBUG_COLOR,
+    ERROR_COLOR,
+    SUCCESS_COLOR,
+)
+from backend.modules.dataProviders.webDataProvider.WebDataProvider import (
+    WebDataProvider,
+)
+from backend.modules.dataProviders.pythonDataProvider.PythonDataProvider import (
     PythonDataProvider,
     PYTHON_DATA_PROVIDER_ID,
 )
-from modules.dataProviders.DataProviderException import DataProviderException
+from backend.modules.dataProviders.DataProviderException import DataProviderException
 
 data_providers_list = []
 python_data_provider_disabled = True

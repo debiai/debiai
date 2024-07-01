@@ -1,7 +1,7 @@
-from config.init_config import get_config
-from modules.dataProviders.DataProvider import DataProvider
-from modules.dataProviders.DataProviderException import DataProviderException
-from modules.dataProviders.pythonDataProvider.dataUtils import (
+from backend.config.init_config import get_config
+from backend.modules.dataProviders.DataProvider import DataProvider
+from backend.modules.dataProviders.DataProviderException import DataProviderException
+from backend.modules.dataProviders.pythonDataProvider.dataUtils import (
     pythonModuleUtils,
     projects,
     samples,
@@ -10,7 +10,7 @@ from modules.dataProviders.pythonDataProvider.dataUtils import (
     tree,
 )
 
-from utils.utils import get_app_version
+from backend.utils.utils import get_app_version
 
 PYTHON_DATA_PROVIDER_ID = "Python module Data Provider"
 

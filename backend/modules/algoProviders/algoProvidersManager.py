@@ -1,9 +1,16 @@
 from termcolor import colored
 
-from config.init_config import get_config, DEBUG_COLOR, ERROR_COLOR, SUCCESS_COLOR
-from modules.algoProviders.AlgoProviderException import AlgoProviderException
-from modules.algoProviders.AlgoProvider import AlgoProvider
-from modules.algoProviders.integratedAlgoProvider.integratedAlgoProvider import (
+from backend.config.init_config import (
+    get_config,
+    DEBUG_COLOR,
+    ERROR_COLOR,
+    SUCCESS_COLOR,
+)
+from backend.modules.algoProviders.AlgoProviderException import (
+    AlgoProviderException,
+)  # noqa
+from backend.modules.algoProviders.AlgoProvider import AlgoProvider
+from backend.modules.algoProviders.integratedAlgoProvider.integratedAlgoProvider import (  # noqa
     IntegratedAlgoProvider,
 )
 

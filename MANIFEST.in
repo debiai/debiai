@@ -1,0 +1,3 @@
+include backend/swagger.yaml
+recursive-include backend/dist *
+

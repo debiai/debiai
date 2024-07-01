@@ -1,4 +1,4 @@
-from modules.dataProviders.pythonDataProvider.dataUtils import (
+from backend.modules.dataProviders.pythonDataProvider.dataUtils import (
     pythonModuleUtils,
     tree,
     hash,

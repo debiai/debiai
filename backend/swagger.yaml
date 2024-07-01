@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  version: 0.28.0-beta1
+  version: 0.27.1
   title: DebiAI_BACKEND_API
   description: DebiAI backend api
   contact:
@@ -12,7 +12,7 @@ paths:
   /version:
     get:
       summary: Ping to check if the backend is running
-      operationId: controller.projects.ping
+      operationId: backend.controller.projects.ping
       responses:
         200:
           description: The server is online
@@ -22,7 +22,7 @@ paths:
     get:
       summary: Get data providers list and status
       tags: [Data Providers]
-      operationId: controller.dataProviders.get_data_providers
+      operationId: backend.controller.dataProviders.get_data_providers
       responses:
         200:
           description: List of data providers
@@ -34,7 +34,7 @@ paths:
     post:
       summary: Add data provider to data providers list
       tags: [Data Providers]
-      operationId: controller.dataProviders.post_data_providers
+      operationId: backend.controller.dataProviders.post_data_providers
       parameters:
         - name: data
           in: body
@@ -63,7 +63,7 @@ paths:
     delete:
       summary: Delete data providers from the list
       tags: [Data Providers]
-      operationId: controller.dataProviders.delete_data_providers
+      operationId: backend.controller.dataProviders.delete_data_providers
       parameters:
         - name: dataProviderId
           in: path
@@ -80,7 +80,7 @@ paths:
     get:
       summary: Get general informations about a data provider, like his version or the max number sample for each type of request
       tags: [Data Providers]
-      operationId: controller.dataProviders.get_data_provider_info
+      operationId: backend.controller.dataProviders.get_data_provider_info
       parameters:
         - name: dataProviderId
           in: path
@@ -126,7 +126,7 @@ paths:
     get:
       summary: Get the projects overview
       tags: [Project]
-      operationId: controller.projects.get_projects
+      operationId: backend.controller.projects.get_projects
       responses:
         200:
           description: List of project overviews
@@ -138,7 +138,7 @@ paths:
     post:
       summary: Post a new project
       tags: [Project]
-      operationId: controller.pythonModuleDp.post_project
+      operationId: backend.controller.pythonModuleDp.post_project
       parameters:
         - name: data
           in: body
@@ -179,7 +179,7 @@ paths:
     get:
       summary: Get the projects overview for a data provider
       tags: [Project]
-      operationId: controller.projects.get_data_providers_project
+      operationId: backend.controller.projects.get_data_providers_project
       parameters:
         - name: dataProviderId
           in: path
@@ -197,7 +197,7 @@ paths:
     get:
       summary: Get project name, nb of models & nb of selections (overviews of a project)
       tags: [Project]
-      operationId: controller.projects.get_project
+      operationId: backend.controller.projects.get_project
       parameters:
         - name: dataProviderId
           in: path
@@ -216,7 +216,7 @@ paths:
     delete:
       summary: remove a project from ID
       tags: [Project]
-      operationId: controller.projects.delete_project
+      operationId: backend.controller.projects.delete_project
       parameters:
         - name: dataProviderId
           in: path
@@ -236,7 +236,7 @@ paths:
     post:
       summary: Get the project data id list
       tags: [Project]
-      operationId: controller.projects.get_data_id_list
+      operationId: backend.controller.projects.get_data_id_list
       parameters:
         - name: dataProviderId
           in: path
@@ -290,7 +290,7 @@ paths:
     post:
       summary: add a new data blocks level structure
       tags: [Project]
-      operationId: controller.pythonModuleDp.post_block_levels
+      operationId: backend.controller.pythonModuleDp.post_block_levels
       parameters:
         - name: dataProviderId
           in: path
@@ -348,7 +348,7 @@ paths:
     post:
       summary: add a new expected results structure
       tags: [Project]
-      operationId: controller.pythonModuleDp.post_resultsStructure
+      operationId: backend.controller.pythonModuleDp.post_resultsStructure
       parameters:
         - name: dataProviderId
           in: path
@@ -399,7 +399,7 @@ paths:
     post:
       summary: add a model
       tags: [Model]
-      operationId: controller.models.post_model
+      operationId: backend.controller.models.post_model
       parameters:
         - name: dataProviderId
           in: path
@@ -436,7 +436,7 @@ paths:
     get:
       summary: Get a model results id list
       tags: [Model]
-      operationId: controller.models.get_model_id_list
+      operationId: backend.controller.models.get_model_id_list
       parameters:
         - name: dataProviderId
           in: path
@@ -463,7 +463,7 @@ paths:
     delete:
       summary: remove a model
       tags: [Model]
-      operationId: controller.models.delete_model
+      operationId: backend.controller.models.delete_model
       parameters:
         - name: dataProviderId
           in: path
@@ -483,11 +483,11 @@ paths:
         404:
           description: model or project doesn't exist
 
-  /data-providers/{dataProviderId}/projects/{projectId}/models/{modelId}/resultsDict:
-    post:
+  ? /data-providers/{dataProviderId}/projects/{projectId}/models/{modelId}/resultsDict
+  : post:
       summary: Add a results to a model
       tags: [Model]
-      operationId: controller.pythonModuleDp.add_results_dict
+      operationId: backend.controller.pythonModuleDp.add_results_dict
       parameters:
         - name: dataProviderId
           in: path
@@ -524,11 +524,11 @@ paths:
         404:
           description: model or project doesn't exist
 
-  /data-providers/{dataProviderId}/projects/{projectId}/models/{modelId}/getModelResults:
-    post:
+  ? /data-providers/{dataProviderId}/projects/{projectId}/models/{modelId}/getModelResults
+  : post:
       summary: Get the model results from a sample list
       tags: [Model]
-      operationId: controller.models.get_results
+      operationId: backend.controller.models.get_results
       parameters:
         - name: dataProviderId
           in: path
@@ -570,7 +570,7 @@ paths:
     post:
       summary: add a tree to an existing project block tree
       tags: [Block]
-      operationId: controller.pythonModuleDp.post_block_tree
+      operationId: backend.controller.pythonModuleDp.post_block_tree
       parameters:
         - name: dataProviderId
           in: path
@@ -605,7 +605,7 @@ paths:
     post:
       summary: get a project tree form a sample list
       tags: [Block]
-      operationId: controller.data.get_data
+      operationId: backend.controller.data.get_data
       parameters:
         - name: dataProviderId
           in: path
@@ -647,7 +647,7 @@ paths:
     get:
       summary: Get the project selections
       tags: [Selection]
-      operationId: controller.selection.get_selections
+      operationId: backend.controller.selection.get_selections
       parameters:
         - name: dataProviderId
           in: path
@@ -668,7 +668,7 @@ paths:
     post:
       summary: add a selection
       tags: [Selection]
-      operationId: controller.selection.post_selection
+      operationId: backend.controller.selection.post_selection
       parameters:
         - name: dataProviderId
           in: path
@@ -706,11 +706,11 @@ paths:
           schema:
             type: object
 
-  /data-providers/{dataProviderId}/projects/{projectId}/selections/{selectionId}:
-    get:
+  ? /data-providers/{dataProviderId}/projects/{projectId}/selections/{selectionId}
+  : get:
       summary: Get a project selection id list
       tags: [Selection]
-      operationId: controller.selection.get_selection_id_list
+      operationId: backend.controller.selection.get_selection_id_list
       parameters:
         - name: dataProviderId
           in: path
@@ -737,7 +737,7 @@ paths:
     delete:
       summary: delete a selection
       tags: [Selection]
-      operationId: controller.selection.delete_selection
+      operationId: backend.controller.selection.delete_selection
       parameters:
         - name: dataProviderId
           in: path
@@ -760,7 +760,7 @@ paths:
     get:
       summary: Get all layouts
       tags: [Layouts]
-      operationId: controller.layouts.get_layouts
+      operationId: backend.controller.layouts.get_layouts
       responses:
         200:
           description: Layouts for all projects
@@ -772,7 +772,7 @@ paths:
     post:
       summary: Add a layout
       tags: [Layouts]
-      operationId: controller.layouts.post_layout
+      operationId: backend.controller.layouts.post_layout
       parameters:
         - name: data
           in: body
@@ -819,7 +819,7 @@ paths:
     delete:
       summary: Delete a layout
       tags: [Layouts]
-      operationId: controller.layouts.delete_layout
+      operationId: backend.controller.layouts.delete_layout
       parameters:
         - name: id
           in: path
@@ -839,7 +839,7 @@ paths:
       summary: Get all widget configurations overview,
         return the number of configurations for each widget
       tags: [Widget configurations]
-      operationId: controller.widgetConfigurations.get_all_configurations
+      operationId: backend.controller.widgetConfigurations.get_all_configurations
       responses:
         200:
           description: Widget configurations number for each widget
@@ -855,7 +855,7 @@ paths:
     get:
       summary: Get the widget configurations
       tags: [Widget configurations]
-      operationId: controller.widgetConfigurations.get_widget_configurations
+      operationId: backend.controller.widgetConfigurations.get_widget_configurations
       parameters:
         - name: widgetKey
           in: path
@@ -897,7 +897,7 @@ paths:
     post:
       summary: Add a widget configuration
       tags: [Widget configurations]
-      operationId: controller.widgetConfigurations.post_configuration
+      operationId: backend.controller.widgetConfigurations.post_configuration
       parameters:
         - name: widgetKey
           in: path
@@ -942,7 +942,7 @@ paths:
     delete:
       summary: Delete a widget configuration
       tags: [Widget configurations]
-      operationId: controller.widgetConfigurations.delete_configuration
+      operationId: backend.controller.widgetConfigurations.delete_configuration
       parameters:
         - name: widgetKey
           in: path
@@ -966,7 +966,7 @@ paths:
     get:
       summary: Get the application export methods
       tags: [Export]
-      operationId: controller.exportMethods.get_export_methods
+      operationId: backend.controller.exportMethods.get_export_methods
       responses:
         200:
           description: Export method list
@@ -997,7 +997,7 @@ paths:
     post:
       summary: Create an export method for the app
       tags: [Export]
-      operationId: controller.exportMethods.post_export_method
+      operationId: backend.controller.exportMethods.post_export_method
       parameters:
         - name: data
           in: body
@@ -1029,7 +1029,7 @@ paths:
     delete:
       summary: Remove an export method for the app
       tags: [Export]
-      operationId: controller.exportMethods.delete_export_method
+      operationId: backend.controller.exportMethods.delete_export_method
       parameters:
         - name: exportMethodId
           in: path
@@ -1045,7 +1045,7 @@ paths:
     post:
       summary: Export data with an export method
       tags: [Export]
-      operationId: controller.exportMethods.exportData
+      operationId: backend.controller.exportMethods.exportData
       parameters:
         - name: exportMethodId
           in: path
@@ -1063,7 +1063,7 @@ paths:
     post:
       summary: Export a selected sample id list from an export method
       tags: [Export]
-      operationId: controller.exportMethods.exportSelection
+      operationId: backend.controller.exportMethods.exportSelection
       parameters:
         - name: dataProviderId
           in: path
@@ -1103,7 +1103,7 @@ paths:
     get:
       summary: Get all Algo providers and their algorithms
       tags: [AlgoProviders]
-      operationId: controller.algoProviders.get_algo_providers
+      operationId: backend.controller.algoProviders.get_algo_providers
       responses:
         200:
           description: Algorithms list
@@ -1116,7 +1116,7 @@ paths:
     post:
       summary: Add an Algo provider
       tags: [AlgoProviders]
-      operationId: controller.algoProviders.post_algo_provider
+      operationId: backend.controller.algoProviders.post_algo_provider
       parameters:
         - name: data
           in: body
@@ -1144,7 +1144,7 @@ paths:
     delete:
       summary: Delete an Algo provider
       tags: [AlgoProviders]
-      operationId: controller.algoProviders.delete_algo_provider
+      operationId: backend.controller.algoProviders.delete_algo_provider
       parameters:
         - name: name
           in: path
@@ -1162,7 +1162,7 @@ paths:
     post:
       summary: Use an algorithm of an Algo provider
       tags: [AlgoProviders]
-      operationId: controller.algoProviders.use_algo
+      operationId: backend.controller.algoProviders.use_algo
       parameters:
         - name: algoProviderName
           in: path
@@ -1229,7 +1229,7 @@ paths:
     post:
       summary: Calculate pearson correlation between rows
       tags: [Statistical operations]
-      operationId: controller.statisticalOperations.pearsonCorrelation
+      operationId: backend.controller.statisticalOperations.pearsonCorrelation
       parameters:
         - name: data
           in: body
@@ -1260,7 +1260,7 @@ paths:
     post:
       summary: Calculate spearman correlation between rows
       tags: [Statistical operations]
-      operationId: controller.statisticalOperations.spearmanCorrelation
+      operationId: backend.controller.statisticalOperations.spearmanCorrelation
       parameters:
         - name: data
           in: body
@@ -1291,7 +1291,7 @@ paths:
     post:
       summary: Calculate mutual informations
       tags: [Statistical operations]
-      operationId: controller.statisticalOperations.mutualInformation
+      operationId: backend.controller.statisticalOperations.mutualInformation
       parameters:
         - name: data
           in: body
@@ -1343,7 +1343,7 @@ paths:
     post:
       summary: Calculate the mutual information between variables
       tags: [Statistical operations]
-      operationId: controller.statisticalOperations.higherDimensionMutualInformation
+      operationId: backend.controller.statisticalOperations.higherDimensionMutualInformation
       parameters:
         - name: data
           in: body
@@ -1380,7 +1380,7 @@ paths:
     post:
       summary: Calculate matrix mutual informations and the higher Dimension
       tags: [Statistical operations]
-      operationId: controller.statisticalOperations.mutualAndHigherInformation
+      operationId: backend.controller.statisticalOperations.mutualAndHigherInformation
       parameters:
         - name: data
           in: body

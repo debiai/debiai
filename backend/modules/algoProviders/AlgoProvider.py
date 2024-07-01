@@ -1,7 +1,7 @@
 # Class for AlgoProvider
 import requests
 import json
-from modules.algoProviders.AlgoProviderException import AlgoProviderException
+from backend.modules.algoProviders.AlgoProviderException import AlgoProviderException
 
 
 class AlgoProvider:
