@@ -45,8 +45,7 @@
 
             <AvailableTag available />
           </h4>
-          Unfolding the column vertically will <br />
-          add one new line for each elements in the array.
+          Add one new line for each elements in the array.
           <br />
           <button @click="unfoldVertically(columnToUnfoldVerticallyOrHorizontally)">
             Add new lines
@@ -65,8 +64,7 @@
               :notAvailableColor="'var(--greyDarker)'"
             />
           </h4>
-          Unfolding the column horizontally will <br />
-          add as many columns as the size of the array.
+          Add a column for each element of the array.
           <br />
 
           <button
