@@ -22,9 +22,31 @@ from modules.dataProviders.webDataProvider.cache.cache import Cache
 # WebDataProvider class, allow to get data from a web data-provider
 class WebDataProvider(DataProvider):
     def __init__(self, url, name):
-        self.url = url
+        self.url = url.strip()
         self._name = name
         self.alive = None
+
+        # Check if url is valid
+        if not self.url:
+            raise ValueError("Url is empty")
+
+        # Remove trailing slash
+        self.url = self.url.rstrip("/")
+
+        # Remove empty spaces
+        self.url = self.url.removesuffix(" ")
+
+        # Remove trailing slash then space
+        self.url = self.url.replace("/ ", "")
+
+        # Remove trailing space then slash
+        self.url = self.url.replace(" /", "")
+
+        # Remove trailing slash, sharp then slash
+        self.url = self.url.rstrip("/#/")
+
+        # Check if the url is in uppercase
+        self.url = self.url.lower()
 
         # Init cache
         self.cache = Cache()
